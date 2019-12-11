@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.carosel-wraper {
+  max-width: 500px;
+  height: 300px;
+  border: 1px solid red;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/*carosel button*/
+.carosel-wraper span {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  color: rgb(189, 189, 189);
+  font-size: 50px;
+  cursor: pointer;
+  text-shadow: 0 0 2px rgb(110, 110, 110);
+  transition: 0.15s;
+  z-index: 101;
+}
+.carosel-wraper span:hover {
+  color: rgb(215, 237, 255);
+  font-size: 53px;
+  text-shadow: 0 0 5px white;
+}
+
+.carosel-prev {
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+}
+.carosel-next {
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+}
+
+/*carosel slides*/
+.carosel {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.carosel-item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: 0.2;
+  transition: 0.5s;
+}
+.carosel-item img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}

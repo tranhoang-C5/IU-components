@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        .page-container {
+            height: 500vh;
+            background: #158bcf;
+            margin-left: 20vw;
+            transition: .5s;
+        }
+
+        .nav {
+            width: 20vw;
+            position: fixed;
+            top: 0;
+            height: 100vh;
+            background: #0d57b8;
+            transition: .5s;
+        }
+
+        .show-nav {
+            background: green;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            right: -50px;
+            bottom: 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav" is-active="true" style="left: 0;">
+            <div class="show-nav">
+
+            </div>
+        </div>
+        <div class="page-container">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur deleniti natus quae consectetur
+            necessitatibus quidem atque incidunt deserunt voluptas facere temporibus odio repudiandae corporis aut
+            praesentium, recusandae commodi unde harum.
+        </div>
+    </div>
+
+    <script>
+        var showBtn = document.querySelector(".show-nav");
+        var nav = document.querySelector(".nav");
+        var page = document.querySelector(".page-container")
+
+        var navHandle = function () {
+            var isActive = nav.getAttribute("is-active");
+            if (isActive === "true") {
+                page.style.marginLeft = "0";
+                nav.style.left = "-20vw";
+                nav.setAttribute("is-active", "false");
+
+            }
+            else {
+                nav.style.left = "0";
+                nav.setAttribute("is-active", "true")
+                page.style.marginLeft = "20vw";
+
+            }
+        }
+
+        showBtn.addEventListener('click', navHandle)
+
+    </script>
+</body>
+
+</html>
